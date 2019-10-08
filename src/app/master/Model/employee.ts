@@ -1,11 +1,11 @@
 export class Employee {
-    private Id: number;
-    private Name: string;
-    private LocationName: string;
-    private DesignationName: string;
-    private DesignationId: number;
-    private LocationId: number;
-    private Age: number;
-    private DOB: Date;
+    public Id: number;
+    public Name: string;
+    public LocationName: string;
+    public DesignationName: string;
+    public DesignationId: number;
+    public LocationId: number;
+    public Age: number;
+    public DOB: Date;
 }
 

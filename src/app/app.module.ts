@@ -7,6 +7,10 @@ import { MasterModule } from './master/master.module';
 import { EditModule } from './edit/edit.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,9 +22,11 @@ import { FormsModule } from '@angular/forms';
     MasterModule,
     EditModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

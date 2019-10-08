@@ -1,1 +1,46 @@
-<p>employee works!</p>
+<div class="row " style="margin-top: 70px;">
+    <div class="col-md-8 mx-auto">
+        <button type="button" value="" class="btn btn-primary" (click)="New()">New</button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6 offset-2">
+        <input type="text" name="SearchText" placeholder="Type name and filter" [(ngModel)]="SearchText" class="form-control col-md-">
+    </div>
+    <input type="button" name="Search" (click)="Filter()" class="btn btn-danger mr-3" value="Filter">
+    <input type="button" name="Search" (click)="ClearFilter()" class="btn btn-dark" value="Clear">
+</div>
+<br>
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <table class="table table-borderless table-hover table-light">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Disgnation</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empItem of employeeArr">
+                    <td>{{empItem.Id}}</td>
+                    <td>{{empItem.Name}}</td>
+                    <td>{{empItem.LocationName}}</td>
+                    <td>{{empItem.DesignationName}}</td>
+                    <td>
+                        <button type="button" name="Edit" class="btn btn-primary" (click)="EditClick(empItem.Id)">
+                            <i>Edit</i>
+                        </button>
+                        <button type="button" name="Delete" class="btn btn-danger ml-2" (click)="DeleteClick(empItem.Id)">
+                            <i>Delete</i>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

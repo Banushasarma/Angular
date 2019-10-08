@@ -1,1 +1,52 @@
-<p>edit-employee works!</p>
+<div class="row " style="margin-top: 70px;">
+    <div class="col-md-5 mx-auto">
+        <div class="form-group">
+            <label for="Name" class="">Name</label>
+            <input type="text" name="Name" id="Name" [(ngModel)]="emp.Name" class="form-control">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 mx-auto">
+        <div class="form-group">
+            <label for="Location" class="">Location</label>
+            <select name="Location" id="Location" [(ngModel)]="emp.LocationId" class="form-control">
+                <option *ngFor="let locItem of locationArr" value="{{locItem.Id}}">{{locItem.Description}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 mx-auto">
+        <div class="form-group">
+            <label for="Designation" class="">Designation</label>
+            <select name="Designation" id="Designation" [(ngModel)]="emp.DesignationId" class="form-control">
+                <option *ngFor="let desigItem of designationArr" value="{{desigItem.Id}}">{{desigItem.Description}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 mx-auto">
+        <div class="form-group">
+            <label for="Age" class="">Age</label>
+            <input type="number" name="Age" id="Age" [(ngModel)]="emp.Age" class="form-control">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 mx-auto">
+        <div class="form-group">
+            <label for="DOB" class="">DOB</label>
+            <input type="date" name="DOB" id="DOB" [(ngModel)]="dateFormat" class="form-control">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 mx-auto">
+        <div class="form-group">
+            <input type="submit" class="btn btn-success mr-3" (click)="Save()" value="Save">
+            <input type="button" class="btn btn-primary" (click)="Back()" value="Back">
+        </div>
+    </div>
+</div>
